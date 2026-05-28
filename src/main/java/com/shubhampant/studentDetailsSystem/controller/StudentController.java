@@ -24,6 +24,7 @@ public class StudentController {
 
     @Autowired
     private StudentService studentService;
+    private static final int maximumEntriesPerPage = 100;
 
     @Autowired
     private ExcelService excelService;
@@ -36,10 +37,9 @@ public class StudentController {
     @GetMapping
     public Page<Student> getStudents(StudentFilterRequest request) {
 
-        int maximumEntriesPerPage = 100;
-        request.setMaximumPageSize(
+        request.setSize(
                 Math.min(
-                        request.getMaximumPageSize(),
+                        request.getSize(),
                         maximumEntriesPerPage
                 )
         );
@@ -52,7 +52,7 @@ public class StudentController {
     }
 
     @PutMapping("/{id}")
-    public Student updateStudent(@RequestBody Student student, @PathVariable String id) {
+    public Student updateStudent(@ Valid @RequestBody Student student, @PathVariable String id) {
         return studentService.updateStudent(id, student);
     }
 

@@ -36,8 +36,8 @@ public class StudentService {
         return repository.findAll(pageable);
     }
 
-    public Optional<Student> getStudentById(String Id) {
-        return repository.findById(Id);
+    public Optional<Student> getStudentById(String id) {
+        return repository.findById(id);
     }
 
     public void deleteStudent(String id) {
@@ -59,17 +59,7 @@ public class StudentService {
         );
 
         Student current =
-                repository.findById(id).orElse(null);
-
-        if (current == null) {
-
-            log.error(
-                    "Student not found with id: {}",
-                    id
-            );
-
-            return null;
-        }
+                repository.findById(id).orElseThrow(() -> new RuntimeException("Student Not Found"));
 
         current.setName(updatedStudent.getName());
         current.setDob(updatedStudent.getDob());
@@ -100,13 +90,20 @@ public class StudentService {
 
         Pageable pageable = PageRequest.of(
                 request.getPage(),
-                request.getMaximumPageSize(),
+                request.getSize(),
                 sort
         );
 
         String name = request.getName();
         Integer grade = request.getGrade();
         Section section = request.getSection();
+
+        log.info(
+                "Filtering students with name={}, grade={}, section={}",
+                request.getName(),
+                request.getGrade(),
+                request.getSection()
+        );
 
         if (name != null && grade != null && section != null) {
             return repository
@@ -171,10 +168,17 @@ public class StudentService {
     }
 
     public List<Student> saveAllStudents(List<Student> students) {
+        log.info(
+                "Saving {} students from Excel upload",
+                students.size()
+        );
+        log.info("Successfully saved all students");
         return repository.saveAll(students);
     }
 
+
     public List<Student> getAllStudentsForExport() {
+        log.info("Exporting all students to Excel");
         return repository.findAll();
     }
 }

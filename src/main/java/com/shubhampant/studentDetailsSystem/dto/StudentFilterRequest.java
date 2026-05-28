@@ -9,11 +9,7 @@ public class StudentFilterRequest {
     private Integer grade;
     private Section section;
     private int page = 0;
-
-    private int maximumPageSize = 100;
+    private int size = 10;
     private String sortBy = "name";
     private String direction = "asc";
-
-
-
 }

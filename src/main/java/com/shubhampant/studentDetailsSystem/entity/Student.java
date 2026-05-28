@@ -19,7 +19,7 @@ public class Student {
     @Id
     private String id;
 
-    @NotBlank
+    @NotBlank(message = "Name is required")
     @Indexed
     private String name;
 
@@ -32,13 +32,13 @@ public class Student {
     // Also uses less space
     private int grade;
 
-    @NotBlank
+    @NotBlank(message = "email cannot be blank")
     @Email
     @Indexed(unique = true)
     private String email;
 
     @Indexed
-    @NotNull
+    @NotNull(message = "section is required")
     private Section section;
 
     // Not indexed because these fields are rarely searched.
