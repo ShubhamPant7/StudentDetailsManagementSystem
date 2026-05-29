@@ -22,12 +22,14 @@ import java.util.List;
 @RequestMapping("/students")
 public class StudentController {
 
-    @Autowired
-    private StudentService studentService;
-    private static final int maximumEntriesPerPage = 100;
+    private final StudentService studentService;
+    private final ExcelService excelService;
 
-    @Autowired
-    private ExcelService excelService;
+    public StudentController(StudentService studentService, ExcelService excelService) {
+        this.studentService = studentService;
+        this.excelService = excelService;
+    }
+    private static final int maximumEntriesPerPage = 100;
 
     @PostMapping
     public Student createStudent(@Valid @RequestBody Student student) {

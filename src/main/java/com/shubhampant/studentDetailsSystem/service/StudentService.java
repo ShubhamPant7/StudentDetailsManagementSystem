@@ -20,9 +20,11 @@ import java.util.Optional;
 @Slf4j
 public class StudentService {
 
-    @Autowired
-    private StudentRepository repository;
+    private final StudentRepository repository;
 
+    public StudentService(StudentRepository repository) {
+        this.repository = repository;
+    }
 
     public Student createStudent(Student student) {
         log.info(
