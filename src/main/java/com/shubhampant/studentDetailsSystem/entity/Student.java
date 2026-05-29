@@ -13,7 +13,7 @@ import java.time.LocalDate;
 
 @Data
 @Builder
-@Document(collection = "students-data")
+@Document(collection = "students")
 public class Student {
 
     @Id
@@ -43,8 +43,11 @@ public class Student {
 
     // Not indexed because these fields are rarely searched.
     // Additional indexes increase memory usage and slow inserts/updates.
+
+    @NotBlank(message = "Phone number is required")
     private String phoneNumber;
 
+    @NotBlank(message = "Address is required")
     private String address;
 
 }

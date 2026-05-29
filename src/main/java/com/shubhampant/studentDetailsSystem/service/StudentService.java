@@ -3,6 +3,7 @@ package com.shubhampant.studentDetailsSystem.service;
 import com.shubhampant.studentDetailsSystem.dto.StudentFilterRequest;
 import com.shubhampant.studentDetailsSystem.entity.Student;
 import com.shubhampant.studentDetailsSystem.enums.Section;
+import com.shubhampant.studentDetailsSystem.exceptions.StudentNotFoundException;
 import com.shubhampant.studentDetailsSystem.repository.StudentRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,8 +37,8 @@ public class StudentService {
         return repository.findAll(pageable);
     }
 
-    public Optional<Student> getStudentById(String id) {
-        return repository.findById(id);
+    public Student getStudentById(String id) {
+        return repository.findById(id).orElseThrow(() -> new StudentNotFoundException("Student not found with id: " +  id));
     }
 
     public void deleteStudent(String id) {
@@ -45,7 +46,10 @@ public class StudentService {
                 "Deleting student with id: {}",
                 id
         );
+        Student student = repository.findById(id).orElseThrow(() -> new StudentNotFoundException("Student not found with id: " + id));
         repository.deleteById(id);
+
+        log.info("Successfully deleted student with id: {}", id);
     }
 
     public Student updateStudent(
@@ -59,7 +63,7 @@ public class StudentService {
         );
 
         Student current =
-                repository.findById(id).orElseThrow(() -> new RuntimeException("Student Not Found"));
+                repository.findById(id).orElseThrow(() -> new StudentNotFoundException("Student not found with id: " + id));
 
         current.setName(updatedStudent.getName());
         current.setDob(updatedStudent.getDob());

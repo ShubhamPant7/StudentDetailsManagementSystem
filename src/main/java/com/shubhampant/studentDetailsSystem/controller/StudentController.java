@@ -48,7 +48,7 @@ public class StudentController {
 
     @GetMapping("/{id}")
     public Student getStudentById(@PathVariable String id) {
-        return studentService.getStudentById(id).orElse(null);
+        return studentService.getStudentById(id);
     }
 
     @PutMapping("/{id}")

@@ -2,6 +2,7 @@ package com.shubhampant.studentDetailsSystem.service;
 
 import com.shubhampant.studentDetailsSystem.entity.Student;
 import com.shubhampant.studentDetailsSystem.enums.Section;
+import com.shubhampant.studentDetailsSystem.exceptions.ExcelProcessingException;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validator;
 import lombok.extern.slf4j.Slf4j;
@@ -17,7 +18,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 
 @Service
@@ -75,13 +75,15 @@ public class ExcelService {
 
                 Set<ConstraintViolation<Student>> violations = validator.validate(student);
                 if (!violations.isEmpty()) {
-                    throw new RuntimeException("Incorrect file structure");
+                    throw new ExcelProcessingException("Incorrect file structure");
                 }
 
                 students.add(student);
             }
 
             workbook.close();
+        } catch (ExcelProcessingException e) {
+            throw e;
         } catch (Exception e) {
 
             log.error(
@@ -89,7 +91,7 @@ public class ExcelService {
                     e
             );
 
-            throw new RuntimeException(
+            throw new ExcelProcessingException(
                     "Failed to parse Excel file"
             );
         }
@@ -150,7 +152,7 @@ public class ExcelService {
 
         } catch (Exception e) {
 
-            throw new RuntimeException("Failed to export Excel file");
+            throw new ExcelProcessingException("Failed to export Excel file");
         }
     }
 }
