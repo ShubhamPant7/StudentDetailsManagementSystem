@@ -1,44 +1,37 @@
-package com.shubhampant.studentDetailsSystem.Config;
+package com.shubhampant.studentDetailsSystem.config;
 
+import com.shubhampant.studentDetailsSystem.service.CustomUserDetailsService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import org.springframework.http.HttpMethod;
 
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import org.springframework.security.web.SecurityFilterChain;
 
+@RequiredArgsConstructor
 @Configuration
 public class SecurityConfig {
 
+    private final CustomUserDetailsService customUserDetailsService;
+
     @Bean
-    public InMemoryUserDetailsManager userDetailsService() {
+    public AuthenticationProvider authenticationProvider(
+            PasswordEncoder passwordEncoder) {
 
-        UserDetails admin =
-                User.withDefaultPasswordEncoder()
-                        .username("admin")
-                        .password("admin123")
-                        .roles("ADMIN")
-                        .build();
+        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
 
-        UserDetails user =
-                User.withDefaultPasswordEncoder()
-                        .username("user")
-                        .password("user123")
-                        .roles("USER")
-                        .build();
+        provider.setUserDetailsService(customUserDetailsService);
+        provider.setPasswordEncoder(passwordEncoder);
 
-        return new InMemoryUserDetailsManager(
-                admin,
-                user
-        );
+        return provider;
     }
 
     @Bean
@@ -52,7 +45,7 @@ public class SecurityConfig {
 
                 .authorizeHttpRequests(auth -> auth
 
-                        // Swagger endpoints
+                         // Swagger endpoints
                         .requestMatchers(
                                 "/swagger-ui/**",
                                 "/v3/api-docs/**"
