@@ -113,7 +113,7 @@ public class StudentService {
 
         if (name != null && grade != null && section != null) {
             return repository
-                    .findByNameContainingIgnoreCaseAndGradeAndSection(
+                    .findByNameStartingWithIgnoreCaseAndGradeAndSection(
                             name,
                             grade,
                             section,
@@ -123,7 +123,7 @@ public class StudentService {
 
         if (name != null && grade != null) {
             return repository
-                    .findByNameContainingIgnoreCaseAndGrade(
+                    .findByNameStartingWithIgnoreCaseAndGrade(
                             name,
                             grade,
                             pageable
@@ -132,7 +132,7 @@ public class StudentService {
 
         if (name != null && section != null) {
             return repository
-                    .findByNameContainingIgnoreCaseAndSection(
+                    .findByNameStartingWithIgnoreCaseAndSection(
                             name,
                             section,
                             pageable

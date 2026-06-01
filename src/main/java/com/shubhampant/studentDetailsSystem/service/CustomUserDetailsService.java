@@ -4,6 +4,7 @@ package com.shubhampant.studentDetailsSystem.service;
 import com.shubhampant.studentDetailsSystem.entity.UserEntity;
 import com.shubhampant.studentDetailsSystem.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -33,6 +34,16 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    CommandLineRunner generatePasswords(
+            PasswordEncoder passwordEncoder) {
+
+        return args -> {
+            System.out.println(passwordEncoder.encode("admin123"));
+            System.out.println(passwordEncoder.encode("user123"));
+        };
     }
 
 }

@@ -15,7 +15,24 @@ public interface StudentRepository extends MongoRepository<Student, String> {
     Page<Student> findByGrade(int grade, Pageable pageable);
     Page<Student> findBySection(Section section, Pageable pageable);
     Page<Student> findByGradeAndSection(int grade, Section section, Pageable pageable);
-    Page<Student> findByNameContainingIgnoreCaseAndGrade(String name, int grade, Pageable pageable);
-    Page<Student> findByNameContainingIgnoreCaseAndSection(String name, Section section, Pageable pageable);
-    Page<Student> findByNameContainingIgnoreCaseAndGradeAndSection(String name, int grade, Section section, Pageable pageable);
+    Page<Student> findByNameStartingWithIgnoreCase(String name, Pageable pageable);
+
+    Page<Student> findByNameStartingWithIgnoreCaseAndGrade(
+            String name,
+            int grade,
+            Pageable pageable
+    );
+
+    Page<Student> findByNameStartingWithIgnoreCaseAndSection(
+            String name,
+            Section section,
+            Pageable pageable
+    );
+
+    Page<Student> findByNameStartingWithIgnoreCaseAndGradeAndSection(
+            String name,
+            int grade,
+            Section section,
+            Pageable pageable
+    );
 }
