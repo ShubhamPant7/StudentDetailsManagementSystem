@@ -16,11 +16,14 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import org.springframework.security.web.SecurityFilterChain;
 
-@RequiredArgsConstructor
 @Configuration
 public class SecurityConfig {
 
     private final CustomUserDetailsService customUserDetailsService;
+
+    public SecurityConfig (CustomUserDetailsService customUserDetailsService) {
+        this.customUserDetailsService = customUserDetailsService;
+    }
 
     @Bean
     public AuthenticationProvider authenticationProvider(

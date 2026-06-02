@@ -15,10 +15,14 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {
 
+
     private final UserRepository userRepository;
+
+    public CustomUserDetailsService (UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -34,16 +38,6 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
-    }
-
-    @Bean
-    CommandLineRunner generatePasswords(
-            PasswordEncoder passwordEncoder) {
-
-        return args -> {
-            System.out.println(passwordEncoder.encode("admin123"));
-            System.out.println(passwordEncoder.encode("user123"));
-        };
     }
 
 }
