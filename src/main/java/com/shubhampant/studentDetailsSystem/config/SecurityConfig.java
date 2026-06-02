@@ -1,7 +1,6 @@
 package com.shubhampant.studentDetailsSystem.config;
 
 import com.shubhampant.studentDetailsSystem.service.CustomUserDetailsService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

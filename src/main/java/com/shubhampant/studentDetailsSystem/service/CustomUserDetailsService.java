@@ -3,8 +3,6 @@ package com.shubhampant.studentDetailsSystem.service;
 
 import com.shubhampant.studentDetailsSystem.entity.UserEntity;
 import com.shubhampant.studentDetailsSystem.repository.UserRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
