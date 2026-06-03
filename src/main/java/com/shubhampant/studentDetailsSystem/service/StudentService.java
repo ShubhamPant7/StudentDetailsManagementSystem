@@ -81,28 +81,9 @@ public class StudentService {
         );
 
         return repository.save(current);
-
     }
 
     public Page<Student> filterStudents(StudentFilterRequest request) {
-
-        Sort sort;
-
-        if (request.getDirection().equalsIgnoreCase("desc")) {
-            sort = Sort.by(request.getSortBy()).descending();
-        } else {
-            sort = Sort.by(request.getSortBy()).ascending();
-        }
-
-        Pageable pageable = PageRequest.of(
-                request.getPage(),
-                request.getSize(),
-                sort
-        );
-
-        String name = request.getName();
-        Integer grade = request.getGrade();
-        Section section = request.getSection();
 
         log.info(
                 "Filtering students with name={}, grade={}, section={}",
@@ -111,66 +92,7 @@ public class StudentService {
                 request.getSection()
         );
 
-        if (name != null && grade != null && section != null) {
-            return repository
-                    .findByNameStartingWithIgnoreCaseAndGradeAndSection(
-                            name,
-                            grade,
-                            section,
-                            pageable
-                    );
-        }
-
-        if (name != null && grade != null) {
-            return repository
-                    .findByNameStartingWithIgnoreCaseAndGrade(
-                            name,
-                            grade,
-                            pageable
-                    );
-        }
-
-        if (name != null && section != null) {
-            return repository
-                    .findByNameStartingWithIgnoreCaseAndSection(
-                            name,
-                            section,
-                            pageable
-                    );
-        }
-
-        if (grade != null && section != null) {
-            return repository
-                    .findByGradeAndSection(
-                            grade,
-                            section,
-                            pageable
-                    );
-        }
-
-        if (name != null) {
-            return repository
-                    .findByNameContainingIgnoreCase(
-                            name,
-                            pageable
-                    );
-        }
-
-        if (grade != null) {
-            return repository.findByGrade(
-                    grade,
-                    pageable
-            );
-        }
-
-        if (section != null) {
-            return repository.findBySection(
-                    section,
-                    pageable
-            );
-        }
-
-        return repository.findAll(pageable);
+        return repository.filterStudents(request);
     }
 
     public List<Student> saveAllStudents(List<Student> students) {

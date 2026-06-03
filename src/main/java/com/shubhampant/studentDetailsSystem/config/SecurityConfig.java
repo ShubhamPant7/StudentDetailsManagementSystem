@@ -77,7 +77,7 @@ public class SecurityConfig {
                                 "/students/**"
                         ).hasRole("ADMIN")
 
-                        // Read operations
+                        // Read operation
                         .requestMatchers(
                                 HttpMethod.GET,
                                 "/students/**"

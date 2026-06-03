@@ -38,7 +38,6 @@ public class StudentController {
 
     @GetMapping
     public Page<Student> getStudents(StudentFilterRequest request) {
-
         request.setSize(
                 Math.min(
                         request.getSize(),
