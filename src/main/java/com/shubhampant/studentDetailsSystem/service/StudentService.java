@@ -27,10 +27,7 @@ public class StudentService {
     }
 
     public Student createStudent(Student student) {
-        log.info(
-                "Creating student with email: {}",
-                student.getEmail()
-        );
+        log.info("Creating student");
         return repository.save(student);
     }
 
