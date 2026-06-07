@@ -1,5 +1,6 @@
 package com.shubhampant.studentDetailsSystem.controller;
 
+import com.shubhampant.studentDetailsSystem.dto.ExcelUploadResult;
 import com.shubhampant.studentDetailsSystem.dto.StudentFilterRequest;
 import com.shubhampant.studentDetailsSystem.entity.Student;
 import com.shubhampant.studentDetailsSystem.enums.Section;
@@ -63,9 +64,10 @@ public class StudentController {
     }
 
     @PostMapping("/upload")
-    public List<Student> uploadExcel(@RequestParam("file") MultipartFile file) {
-        List<Student> students = excelService.excelToStudents(file);
-        return studentService.saveAllStudents(students);
+    public ExcelUploadResult uploadExcel(@RequestParam("file") MultipartFile file) {
+        ExcelUploadResult result = excelService.excelToStudents(file);
+        studentService.saveAllStudents(result.getValidStudents());
+        return result;
     }
 
     @GetMapping("/export")

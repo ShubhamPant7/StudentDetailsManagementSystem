@@ -1,8 +1,11 @@
 package com.shubhampant.studentDetailsSystem.service;
 
+import com.shubhampant.studentDetailsSystem.dto.ExcelUploadResult;
+import com.shubhampant.studentDetailsSystem.dto.RowError;
 import com.shubhampant.studentDetailsSystem.entity.Student;
 import com.shubhampant.studentDetailsSystem.enums.Section;
 import com.shubhampant.studentDetailsSystem.exceptions.ExcelProcessingException;
+import com.shubhampant.studentDetailsSystem.repository.StudentRepository;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validator;
 import lombok.extern.slf4j.Slf4j;
@@ -25,13 +28,17 @@ import java.util.Set;
 public class ExcelService {
 
     private final Validator validator;
+    private final StudentRepository studentRepository;
 
-    public ExcelService(Validator validator) {
+    public ExcelService(Validator validator, StudentRepository studentRepository) {
         this.validator = validator;
+        this.studentRepository = studentRepository;
     }
 
-    public List<Student> excelToStudents(MultipartFile file) {
+    public ExcelUploadResult excelToStudents(MultipartFile file) {
         List<Student> students = new ArrayList<>();
+        List<RowError> errors = new ArrayList<>();
+
         log.info("Started Excel upload");
 
         try {
@@ -42,48 +49,90 @@ public class ExcelService {
             Sheet sheet = workbook.getSheetAt(0);
 
             for (int i = 1; i <= sheet.getLastRowNum(); i++) {
-                Row row = sheet.getRow(i);
 
-                Student student = Student.builder()
-                        .name(row.getCell(0).getStringCellValue())
-                        .grade((int) row.getCell(2).getNumericCellValue())
-                        .section(Section.valueOf(row.getCell(3).getStringCellValue()))
-                        .email(row.getCell(4).getStringCellValue())
-                        .build();
+                try {
 
+                    Row row = sheet.getRow(i);
 
-                Cell dobCell = row.getCell(1);
+                    Student student = Student.builder()
+                            .name(row.getCell(0).getStringCellValue())
+                            .grade((int) row.getCell(2).getNumericCellValue())
+                            .section(Section.valueOf(row.getCell(3).getStringCellValue()))
+                            .email(row.getCell(4).getStringCellValue())
+                            .build();
 
-                if (dobCell.getCellType() == CellType.NUMERIC) {
-                    student.setDob(
-                            dobCell
-                                    .getLocalDateTimeCellValue()
-                                    .toLocalDate()
+                    Cell dobCell = row.getCell(1);
+
+                    if (dobCell.getCellType() == CellType.NUMERIC) {
+                        student.setDob(
+                                dobCell.getLocalDateTimeCellValue().toLocalDate()
+                        );
+                    } else {
+                        student.setDob(
+                                LocalDate.parse(
+                                        dobCell.getStringCellValue()
+                                )
+                        );
+                    }
+
+                    student.setPhoneNumber(
+                            row.getCell(5).getStringCellValue()
                     );
 
-                } else {
-                    student.setDob(
-                            LocalDate.parse(
-                                    dobCell.getStringCellValue()
+                    student.setAddress(
+                            row.getCell(6).getStringCellValue()
+                    );
+
+                    Set<ConstraintViolation<Student>> violations =
+                            validator.validate(student);
+
+                    if (!violations.isEmpty()) {
+
+                        StringBuilder errorMessage = new StringBuilder();
+
+                        for (ConstraintViolation<Student> violation : violations) {
+
+                            errorMessage
+                                    .append(violation.getMessage())
+                                    .append(", ");
+                        }
+
+                        errors.add(
+                                new RowError(
+                                        i + 1,
+                                        errorMessage.toString()
+                                )
+                        );
+
+                        continue;
+                    }
+
+                    if (studentRepository.existsByEmail(student.getEmail())) {
+
+                        errors.add(
+                                new RowError(
+                                        i + 1,
+                                        "Email already exists"
+                                )
+                        );
+
+                        continue;
+                    }
+
+                    students.add(student);
+
+                } catch (Exception e) {
+
+                    errors.add(
+                            new RowError(
+                                    i + 1,
+                                    e.getMessage()
                             )
                     );
                 }
-
-                student.setPhoneNumber(row.getCell(5).getStringCellValue());
-
-                student.setAddress(row.getCell(6).getStringCellValue());
-
-                Set<ConstraintViolation<Student>> violations = validator.validate(student);
-                if (!violations.isEmpty()) {
-                    throw new ExcelProcessingException("Incorrect file structure");
-                }
-
-                students.add(student);
             }
 
             workbook.close();
-        } catch (ExcelProcessingException e) {
-            throw e;
         } catch (Exception e) {
 
             log.error(
@@ -100,7 +149,11 @@ public class ExcelService {
                 "Successfully parsed {} students from Excel",
                 students.size()
         );
-        return students;
+
+        return new ExcelUploadResult(
+                students,
+                errors
+        );
     }
 
     public ByteArrayInputStream studentsToExcel(List<Student> students) {
