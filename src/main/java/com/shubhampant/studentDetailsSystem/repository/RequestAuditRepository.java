@@ -1,10 +1,11 @@
 package com.shubhampant.studentDetailsSystem.repository;
 
 import com.shubhampant.studentDetailsSystem.entity.RequestAudit;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RequestAuditRepository extends JpaRepository<RequestAudit, Long> {
-
 }

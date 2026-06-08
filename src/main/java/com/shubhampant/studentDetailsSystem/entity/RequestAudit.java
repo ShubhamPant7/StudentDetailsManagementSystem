@@ -1,11 +1,17 @@
 package com.shubhampant.studentDetailsSystem.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "audit")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class RequestAudit {
 
     @Id
