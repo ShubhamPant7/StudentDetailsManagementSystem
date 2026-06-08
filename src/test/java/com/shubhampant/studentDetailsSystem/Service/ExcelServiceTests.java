@@ -26,7 +26,6 @@ import java.io.ByteArrayOutputStream;
 import java.time.LocalDate;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -36,6 +35,7 @@ import static org.mockito.Mockito.*;
 public class ExcelServiceTests {
 
     private Validator validator;
+
     private ExcelService excelService;
 
     @BeforeEach
@@ -194,16 +194,13 @@ public class ExcelServiceTests {
                 .address("Delhi")
                 .build();
 
-        ByteArrayInputStream result =
-                excelService.studentsToExcel(List.of(student));
+        ByteArrayInputStream result = excelService.studentsToExcel(List.of(student));
 
-        Workbook workbook =
-                new XSSFWorkbook(result);
+        Workbook workbook = new XSSFWorkbook(result);
 
         Sheet sheet = workbook.getSheetAt(0);
 
-        assertEquals("Shubham",
-                sheet.getRow(1).getCell(0).getStringCellValue());
+        assertEquals("Shubham", sheet.getRow(1).getCell(0).getStringCellValue());
 
         workbook.close();
     }
