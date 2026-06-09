@@ -1,6 +1,7 @@
 package com.shubhampant.studentDetailsSystem.service;
 
 import com.shubhampant.studentDetailsSystem.entity.RequestAudit;
+import com.shubhampant.studentDetailsSystem.exceptions.AuditNotFoundException;
 import com.shubhampant.studentDetailsSystem.repository.RequestAuditRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -25,6 +26,6 @@ public class RequestAuditService {
 
     public RequestAudit getAuditById(Long id) {
 
-        return requestAuditRepository.findById(id).orElseThrow(() -> new RuntimeException("Audit record not found"));
+        return requestAuditRepository.findById(id).orElseThrow(() -> new AuditNotFoundException("Audit record not found"));
     }
 }

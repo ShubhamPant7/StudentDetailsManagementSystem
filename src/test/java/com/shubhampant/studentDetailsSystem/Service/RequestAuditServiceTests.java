@@ -1,6 +1,7 @@
 package com.shubhampant.studentDetailsSystem.Service;
 
 import com.shubhampant.studentDetailsSystem.entity.RequestAudit;
+import com.shubhampant.studentDetailsSystem.exceptions.AuditNotFoundException;
 import com.shubhampant.studentDetailsSystem.repository.RequestAuditRepository;
 import com.shubhampant.studentDetailsSystem.service.RequestAuditService;
 import org.junit.jupiter.api.Test;
@@ -73,7 +74,7 @@ public class RequestAuditServiceTests {
 
         when(requestAuditRepository.findById(1L)).thenReturn(Optional.empty());
 
-        RuntimeException exception = assertThrows(RuntimeException.class, () -> requestAuditService.getAuditById(1L));
+        RuntimeException exception = assertThrows(AuditNotFoundException.class, () -> requestAuditService.getAuditById(1L));
 
         assertEquals("Audit record not found", exception.getMessage());
 
