@@ -19,6 +19,11 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>("Error: " + ex.getMessage(), HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(AuditNotFoundException.class)
+    public ResponseEntity<String> handleAuditRecordNotFound(AuditNotFoundException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+    }
+
     @ExceptionHandler(ExcelProcessingException.class)
     public ResponseEntity<String> handleExcelProcessingException(ExcelProcessingException ex) {
         return new ResponseEntity<>("Error: " + ex.getMessage(), HttpStatus.BAD_REQUEST);

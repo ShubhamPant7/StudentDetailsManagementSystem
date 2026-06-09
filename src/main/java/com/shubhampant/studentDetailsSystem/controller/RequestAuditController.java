@@ -22,7 +22,7 @@ public class RequestAuditController {
     }
 
     @GetMapping("/{id}")
-    public RequestAudit getAuditLogsById(@PathVariable Long id) {
+    public RequestAudit getAuditLogById(@PathVariable Long id) {
         return requestAuditService.getAuditById(id);
     }
 }
