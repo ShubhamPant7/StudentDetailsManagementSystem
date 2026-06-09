@@ -28,7 +28,9 @@ public class StudentService {
 
     public Student createStudent(Student student) {
         log.info("Creating student");
-        return repository.save(student);
+        Student savedStudent =  repository.save(student);
+        log.info("Successfully created student with id={}", savedStudent.getId());
+        return savedStudent;
     }
 
     public Page<Student> getStudents(int page, int size) {
@@ -37,6 +39,7 @@ public class StudentService {
     }
 
     public Student getStudentById(String id) {
+        log.debug("Fetching student with id={}", id);
         return repository.findById(id).orElseThrow(() -> new StudentNotFoundException("Student not found with id: " +  id));
     }
 
@@ -97,8 +100,16 @@ public class StudentService {
                 "Saving {} students from Excel upload",
                 students.size()
         );
-        log.info("Successfully saved all students");
-        return repository.saveAll(students);
+
+        List<Student> savedStudents =
+                repository.saveAll(students);
+
+        log.info(
+                "Successfully saved {} students",
+                savedStudents.size()
+        );
+
+        return savedStudents;
     }
 
 

@@ -7,6 +7,7 @@ import com.shubhampant.studentDetailsSystem.service.RequestAuditService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -17,6 +18,7 @@ import java.time.LocalDateTime;
 
 @Component
 @RequiredArgsConstructor
+@Slf4j
 public class RequestAuditInterceptor implements HandlerInterceptor {
     private final RequestAuditService requestAuditService;
 
@@ -41,6 +43,10 @@ public class RequestAuditInterceptor implements HandlerInterceptor {
                 .createdAt(LocalDateTime.now())
                 .build();
 
-        requestAuditService.save(audit);
+        try {
+            requestAuditService.save(audit);
+        } catch (Exception e) {
+            log.error("Failed to persist audit record for endpoint={}", request.getRequestURI(), e);
+        }
     }
 }

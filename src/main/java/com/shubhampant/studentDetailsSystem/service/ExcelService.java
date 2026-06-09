@@ -64,27 +64,16 @@ public class ExcelService {
                     Cell dobCell = row.getCell(1);
 
                     if (dobCell.getCellType() == CellType.NUMERIC) {
-                        student.setDob(
-                                dobCell.getLocalDateTimeCellValue().toLocalDate()
-                        );
+                        student.setDob(dobCell.getLocalDateTimeCellValue().toLocalDate());
                     } else {
-                        student.setDob(
-                                LocalDate.parse(
-                                        dobCell.getStringCellValue()
-                                )
-                        );
+                        student.setDob(LocalDate.parse(dobCell.getStringCellValue()));
                     }
 
-                    student.setPhoneNumber(
-                            row.getCell(5).getStringCellValue()
-                    );
+                    student.setPhoneNumber(row.getCell(5).getStringCellValue());
 
-                    student.setAddress(
-                            row.getCell(6).getStringCellValue()
-                    );
+                    student.setAddress(row.getCell(6).getStringCellValue());
 
-                    Set<ConstraintViolation<Student>> violations =
-                            validator.validate(student);
+                    Set<ConstraintViolation<Student>> violations = validator.validate(student);
 
                     if (!violations.isEmpty()) {
 
@@ -92,29 +81,19 @@ public class ExcelService {
 
                         for (ConstraintViolation<Student> violation : violations) {
 
-                            errorMessage
-                                    .append(violation.getMessage())
-                                    .append(", ");
+                            errorMessage.append(violation.getMessage()).append(", ");
                         }
 
-                        errors.add(
-                                new RowError(
-                                        i + 1,
-                                        errorMessage.toString()
-                                )
-                        );
+                        errors.add(new RowError(i + 1, errorMessage.toString()));
 
                         continue;
                     }
 
                     if (studentRepository.existsByEmail(student.getEmail())) {
 
-                        errors.add(
-                                new RowError(
-                                        i + 1,
-                                        "Email already exists"
-                                )
-                        );
+                        log.warn("Duplicate email found in Excel upload: {}", student.getEmail());
+
+                        errors.add(new RowError(i + 1, "Email already exists"));
 
                         continue;
                     }
@@ -123,42 +102,30 @@ public class ExcelService {
 
                 } catch (Exception e) {
 
-                    errors.add(
-                            new RowError(
-                                    i + 1,
-                                    e.getMessage()
-                            )
-                    );
+                    log.warn("Failed to process Excel row {}", i + 1, e);
+
+                    errors.add(new RowError(i + 1, e.getMessage()));
                 }
             }
 
             workbook.close();
         } catch (Exception e) {
 
-            log.error(
-                    "Failed to parse Excel file",
-                    e
-            );
+            log.error("Failed to parse Excel file", e);
 
-            throw new ExcelProcessingException(
-                    "Failed to parse Excel file"
-            );
+            throw new ExcelProcessingException("Failed to parse Excel file");
         }
 
-        log.info(
-                "Successfully parsed {} students from Excel",
-                students.size()
-        );
+        log.info("Excel upload completed. Valid students={}, Errors={}", students.size(), errors.size());
 
-        return new ExcelUploadResult(
-                students,
-                errors
-        );
+        return new ExcelUploadResult(students, errors);
     }
 
     public ByteArrayInputStream studentsToExcel(List<Student> students) {
 
         try {
+
+            log.info("Exporting {} students to Excel", students.size());
 
             Workbook workbook = new XSSFWorkbook();
 
@@ -201,9 +168,13 @@ public class ExcelService {
 
             workbook.close();
 
+            log.info("Successfully exported {} students to Excel", students.size());
+
             return new ByteArrayInputStream(out.toByteArray());
 
         } catch (Exception e) {
+
+            log.error("Failed to export Excel file", e);
 
             throw new ExcelProcessingException("Failed to export Excel file");
         }
