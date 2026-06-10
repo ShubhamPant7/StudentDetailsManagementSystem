@@ -15,6 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import org.springframework.security.web.SecurityFilterChain;
 
+//Configures application authentication and authorization rules. Uses HTTP Basic Authentication with custom UserDetailsService and role based access for endpoints.
 @Configuration
 public class SecurityConfig {
 
@@ -36,6 +37,8 @@ public class SecurityConfig {
         return provider;
     }
 
+
+    //Defines endpoint level authrozation rules and HTTP security settings.
     @Bean
     public SecurityFilterChain securityFilterChain(
             HttpSecurity http

@@ -16,18 +16,21 @@ import org.springframework.web.servlet.HandlerInterceptor;
 
 import java.time.LocalDateTime;
 
+//Intercepts completed HTTP requests and creates audit record containing data like user, endpoint, method, status and error information.
 @Component
 @RequiredArgsConstructor
 @Slf4j
 public class RequestAuditInterceptor implements HandlerInterceptor {
     private final RequestAuditService requestAuditService;
 
+    //Executes after request has fully completed.
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
         String username = "ANONYMOUS";
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
+        //Authentication.isAuthenticated() might still be true for anonymous users, so AnonymousAuthenticationToken is excluded.
         if (authentication != null && authentication.isAuthenticated() && !(authentication instanceof AnonymousAuthenticationToken)) {
 
             username = authentication.getName();

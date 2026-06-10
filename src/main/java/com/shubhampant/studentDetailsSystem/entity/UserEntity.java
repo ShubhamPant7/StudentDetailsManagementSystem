@@ -6,7 +6,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
-
+// Entity representing a user.(Eg: Admin, User, Teacher, Student etc)
 @Entity
 @Getter
 @Setter

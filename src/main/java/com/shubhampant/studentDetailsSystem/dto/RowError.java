@@ -2,6 +2,7 @@ package com.shubhampant.studentDetailsSystem.dto;
 
 import lombok.Getter;
 
+//DTO representing an error while parsing excel file (includes both row number and the error/s received).
 public class RowError {
 
     @Getter

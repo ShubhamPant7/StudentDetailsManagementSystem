@@ -5,6 +5,7 @@ import lombok.Getter;
 
 import java.util.List;
 
+//DTO representing result of uploading the excel file.
 public class ExcelUploadResult {
 
     @Getter

@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+//Service layer responsible for student related operations. Handles CRUD operations, filtering, bulk imports and exports.
 @Service
 @Slf4j
 public class StudentService {
@@ -25,6 +26,7 @@ public class StudentService {
     public StudentService(StudentRepository repository) {
         this.repository = repository;
     }
+
 
     public Student createStudent(Student student) {
         log.info("Creating student");

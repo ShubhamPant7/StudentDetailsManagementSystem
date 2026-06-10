@@ -11,6 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
 
+// Entity representing a student.
 @Data
 @Builder
 @Document(collection = "students")

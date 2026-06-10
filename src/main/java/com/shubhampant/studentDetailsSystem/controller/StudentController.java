@@ -19,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.ByteArrayInputStream;
 import java.util.List;
 
+//REST endpoints for interacting with student records. Provides pagination for large results.
 @RestController
 @RequestMapping("/students")
 public class StudentController {
@@ -30,6 +31,8 @@ public class StudentController {
         this.studentService = studentService;
         this.excelService = excelService;
     }
+
+    //Caps page size to prevent users from getting overloaded with data.
     private static final int maximumEntriesPerPage = 100;
 
     @PostMapping
@@ -39,12 +42,7 @@ public class StudentController {
 
     @GetMapping
     public Page<Student> getStudents(StudentFilterRequest request) {
-        request.setSize(
-                Math.min(
-                        request.getSize(),
-                        maximumEntriesPerPage
-                )
-        );
+        request.setSize(Math.min(request.getSize(), maximumEntriesPerPage));
         return studentService.filterStudents(request);
     }
 
@@ -72,6 +70,8 @@ public class StudentController {
 
     @GetMapping("/export")
     public ResponseEntity<InputStreamResource> exportStudents() {
+
+        //Generate excel file in memory and return it as a downloadable attachment.
         List<Student> students = studentService.getAllStudentsForExport();
 
         ByteArrayInputStream excelFile = excelService.studentsToExcel(students);

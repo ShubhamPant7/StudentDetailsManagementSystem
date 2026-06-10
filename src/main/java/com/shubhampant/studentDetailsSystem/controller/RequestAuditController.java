@@ -6,6 +6,7 @@ import com.shubhampant.studentDetailsSystem.service.RequestAuditService;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
+//REST endpoints for viewing request audit records. Provides pagination for large results.
 @RestController
 @RequestMapping("/audit")
 public class RequestAuditController {

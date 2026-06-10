@@ -56,35 +56,23 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseEntity<String>
-    handleHttpMessageNotReadableException(
-            HttpMessageNotReadableException ex
-    ) {
+    handleHttpMessageNotReadableException(HttpMessageNotReadableException ex) {
+
         log.error("Malformed request body received");
+
         if (ex.getMessage().contains("LocalDate")) {
-            return new ResponseEntity<>(
-                    "Invalid date format. Use yyyy-MM-dd",
-                    HttpStatus.BAD_REQUEST
-            );
+            return new ResponseEntity<>("Invalid date format. Use yyyy-MM-dd", HttpStatus.BAD_REQUEST);
         }
 
         if (ex.getMessage().contains("Section")) {
-            return new ResponseEntity<>(
-                    "Invalid section. Allowed values: A, B, C, D",
-                    HttpStatus.BAD_REQUEST
-            );
+            return new ResponseEntity<>("Invalid section. Allowed values: A, B, C, D", HttpStatus.BAD_REQUEST);
         }
 
-        return new ResponseEntity<>(
-                "Invalid request body",
-                HttpStatus.BAD_REQUEST
-        );
+        return new ResponseEntity<>("Invalid request body", HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<String> handleException(
-            Exception ex
-    ) {
-
+    public ResponseEntity<String> handleException(Exception ex) {
         log.error("Unexpected exception occurred", ex);
 
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal server error");

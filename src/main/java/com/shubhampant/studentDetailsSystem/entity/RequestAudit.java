@@ -5,6 +5,8 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 
+
+// Entity representing an API request audit log.
 @Entity
 @Table(name = "audit")
 @Getter

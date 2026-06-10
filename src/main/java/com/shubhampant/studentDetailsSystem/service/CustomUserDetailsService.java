@@ -13,6 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+//Service layer for UserDetails related operations. Includes password encoding.
 @Service
 @Slf4j
 public class CustomUserDetailsService implements UserDetailsService {
@@ -23,6 +24,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     public CustomUserDetailsService (UserRepository userRepository) {
         this.userRepository = userRepository;
     }
+
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -44,6 +46,7 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .build();
     }
 
+    //Implements BCryptPasswordEncoder for password encoding.
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

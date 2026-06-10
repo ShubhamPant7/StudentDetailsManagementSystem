@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-
+//Service layer for Excel related operations (bulk operations). Supports uploading and downloading excel files.
 @Service
 @Slf4j
 public class ExcelService {
@@ -35,6 +35,7 @@ public class ExcelService {
         this.studentRepository = studentRepository;
     }
 
+    //Converting an uploaded excel file into Students to be added to the database.
     public ExcelUploadResult excelToStudents(MultipartFile file) {
         List<Student> students = new ArrayList<>();
         List<RowError> errors = new ArrayList<>();
@@ -48,6 +49,7 @@ public class ExcelService {
 
             Sheet sheet = workbook.getSheetAt(0);
 
+            //For each row (excluding header row), try to build a Student object.
             for (int i = 1; i <= sheet.getLastRowNum(); i++) {
 
                 try {
@@ -61,6 +63,7 @@ public class ExcelService {
                             .email(row.getCell(4).getStringCellValue())
                             .build();
 
+                    //Depending on DOB cell type, handle format.
                     Cell dobCell = row.getCell(1);
 
                     if (dobCell.getCellType() == CellType.NUMERIC) {
@@ -75,6 +78,7 @@ public class ExcelService {
 
                     Set<ConstraintViolation<Student>> violations = validator.validate(student);
 
+                    //If there are violations with Student entity, return a list of errors.
                     if (!violations.isEmpty()) {
 
                         StringBuilder errorMessage = new StringBuilder();
@@ -88,6 +92,8 @@ public class ExcelService {
 
                         continue;
                     }
+
+                    //If there is a duplicate email, do not process that row and return it in the errors list.
 
                     if (studentRepository.existsByEmail(student.getEmail())) {
 
@@ -121,6 +127,7 @@ public class ExcelService {
         return new ExcelUploadResult(students, errors);
     }
 
+    //Convert students in the DB to a downloadable excel file.
     public ByteArrayInputStream studentsToExcel(List<Student> students) {
 
         try {

@@ -3,6 +3,7 @@ import com.shubhampant.studentDetailsSystem.enums.Section;
 
 import lombok.Data;
 
+//DTO representing filters/parameters on a request.
 @Data
 public class StudentFilterRequest {
     private String name;
