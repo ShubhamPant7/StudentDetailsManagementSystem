@@ -17231,3 +17231,1032 @@ java.lang.IllegalArgumentException: SimpleMessageConverter only supports String,
                 INFO 
                 com.zaxxer.hikari.HikariDataSource
                 - HikariPool-1 - Shutdown completed.
+2026-06-12 12:16:51
+                [background-preinit]
+                INFO 
+                o.h.validator.internal.util.Version
+                - HV000001: Hibernate Validator 8.0.3.Final
+2026-06-12 12:16:51
+                [main]
+                INFO 
+                c.s.s.StudentDetailsSystemApplication
+                - Starting StudentDetailsSystemApplication using Java 25.0.2 with PID 48872 (/Users/shubhampant/Desktop/Addverb2026/studentDetailsSystem/target/classes started by shubhampant in /Users/shubhampant/Desktop/Addverb2026/studentDetailsSystem)
+2026-06-12 12:16:51
+                [main]
+                INFO 
+                c.s.s.StudentDetailsSystemApplication
+                - No active profile set, falling back to 1 default profile: "default"
+2026-06-12 12:16:51
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-12 12:16:51
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-12 12:16:51
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationExtensionSupport
+                - Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.shubhampant.studentDetailsSystem.repository.StudentRepository; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2026-06-12 12:16:51
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 19 ms. Found 2 JPA repository interfaces.
+2026-06-12 12:16:51
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-12 12:16:51
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2026-06-12 12:16:51
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationExtensionSupport
+                - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.shubhampant.studentDetailsSystem.repository.RequestAuditRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2026-06-12 12:16:51
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationExtensionSupport
+                - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.shubhampant.studentDetailsSystem.repository.UserRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2026-06-12 12:16:51
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 4 ms. Found 1 MongoDB repository interface.
+2026-06-12 12:16:52
+                [main]
+                INFO 
+                o.s.b.w.e.tomcat.TomcatWebServer
+                - Tomcat initialized with port 8080 (http)
+2026-06-12 12:16:52
+                [main]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-12 12:16:52
+                [main]
+                INFO 
+                o.a.catalina.core.StandardService
+                - Starting service [Tomcat]
+2026-06-12 12:16:52
+                [main]
+                INFO 
+                o.a.catalina.core.StandardEngine
+                - Starting Servlet engine: [Apache Tomcat/10.1.54]
+2026-06-12 12:16:52
+                [main]
+                INFO 
+                o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring embedded WebApplicationContext
+2026-06-12 12:16:52
+                [main]
+                INFO 
+                o.s.b.w.s.c.ServletWebServerApplicationContext
+                - Root WebApplicationContext: initialization completed in 438 ms
+2026-06-12 12:16:52
+                [main]
+                INFO 
+                o.h.jpa.internal.util.LogHelper
+                - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-12 12:16:52
+                [main]
+                INFO 
+                org.hibernate.Version
+                - HHH000412: Hibernate ORM core version 6.6.49.Final
+2026-06-12 12:16:52
+                [main]
+                INFO 
+                o.h.c.i.RegionFactoryInitiator
+                - HHH000026: Second-level cache disabled
+2026-06-12 12:16:52
+                [main]
+                INFO 
+                o.s.o.j.p.SpringPersistenceUnitInfo
+                - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-12 12:16:52
+                [main]
+                INFO 
+                com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Starting...
+2026-06-12 12:16:52
+                [main]
+                INFO 
+                com.zaxxer.hikari.pool.HikariPool
+                - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@22f80e36
+2026-06-12 12:16:52
+                [main]
+                INFO 
+                com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Start completed.
+2026-06-12 12:16:52
+                [main]
+                INFO 
+                o.hibernate.orm.connections.pooling
+                - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 9.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-12 12:16:52
+                [main]
+                INFO 
+                o.h.e.t.j.p.i.JtaPlatformInitiator
+                - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-12 12:16:52
+                [main]
+                INFO 
+                o.s.o.j.LocalContainerEntityManagerFactoryBean
+                - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-12 12:16:52
+                [main]
+                INFO 
+                org.mongodb.driver.client
+                - MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.5.2"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "aarch64", "version": "15.6.1"}, "platform": "Java/Oracle Corporation/25.0.2+10-69"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@7695184b, com.mongodb.Jep395RecordCodecProvider@29390110, com.mongodb.KotlinCodecProvider@4b89515b]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null}
+2026-06-12 12:16:52
+                [cluster-ClusterId{value='6a2bab5c68294d18d1fd56be', description='null'}-localhost:27017]
+                INFO 
+                org.mongodb.driver.cluster
+                - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=27, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=6135500, minRoundTripTimeNanos=0}
+2026-06-12 12:16:53
+                [main]
+                WARN 
+                o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration
+                - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-12 12:16:53
+                [main]
+                INFO 
+                o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer
+                - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-06-12 12:16:53
+                [main]
+                WARN 
+                o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer
+                - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-06-12 12:16:53
+                [main]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-12 12:16:53
+                [main]
+                INFO 
+                o.s.b.w.e.tomcat.TomcatWebServer
+                - Tomcat started on port 8080 (http) with context path '/'
+2026-06-12 12:16:53
+                [main]
+                INFO 
+                o.s.a.r.c.CachingConnectionFactory
+                - Attempting to connect to: [localhost:5672]
+2026-06-12 12:16:53
+                [main]
+                INFO 
+                o.s.a.r.c.CachingConnectionFactory
+                - Created new connection: rabbitConnectionFactory#65bc50c9:0/SimpleConnection@27bde886 [delegate=amqp://guest@127.0.0.1:5672/, localPort=49207]
+2026-06-12 12:16:53
+                [main]
+                INFO 
+                c.s.s.StudentDetailsSystemApplication
+                - Started StudentDetailsSystemApplication in 1.799 seconds (process running for 2.064)
+2026-06-12 12:17:49
+                [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2]
+                INFO 
+                o.s.a.r.l.SimpleMessageListenerContainer
+                - Waiting for workers to finish.
+2026-06-12 12:17:49
+                [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2]
+                INFO 
+                o.s.a.r.l.SimpleMessageListenerContainer
+                - Waiting for workers to finish.
+2026-06-12 12:17:49
+                [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2]
+                INFO 
+                o.s.a.r.l.SimpleMessageListenerContainer
+                - Waiting for workers to finish.
+2026-06-12 12:17:49
+                [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2]
+                INFO 
+                o.s.a.r.l.SimpleMessageListenerContainer
+                - Successfully waited for workers to finish.
+2026-06-12 12:17:49
+                [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2]
+                INFO 
+                o.s.a.r.l.SimpleMessageListenerContainer
+                - Successfully waited for workers to finish.
+2026-06-12 12:17:49
+                [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2]
+                INFO 
+                o.s.a.r.l.SimpleMessageListenerContainer
+                - Successfully waited for workers to finish.
+2026-06-12 12:17:49
+                [SpringApplicationShutdownHook]
+                INFO 
+                o.s.b.w.e.tomcat.GracefulShutdown
+                - Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-12 12:17:49
+                [tomcat-shutdown]
+                INFO 
+                o.s.b.w.e.tomcat.GracefulShutdown
+                - Graceful shutdown complete
+2026-06-12 12:17:49
+                [SpringApplicationShutdownHook]
+                INFO 
+                o.s.o.j.LocalContainerEntityManagerFactoryBean
+                - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-12 12:17:49
+                [SpringApplicationShutdownHook]
+                INFO 
+                com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Shutdown initiated...
+2026-06-12 12:17:49
+                [SpringApplicationShutdownHook]
+                INFO 
+                com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Shutdown completed.
+2026-06-12 12:22:27
+                [background-preinit]
+                INFO 
+                o.h.validator.internal.util.Version
+                - HV000001: Hibernate Validator 8.0.3.Final
+2026-06-12 12:22:27
+                [main]
+                INFO 
+                c.s.s.StudentDetailsSystemApplication
+                - Starting StudentDetailsSystemApplication using Java 25.0.2 with PID 48967 (/Users/shubhampant/Desktop/Addverb2026/studentDetailsSystem/target/classes started by shubhampant in /Users/shubhampant/Desktop/Addverb2026/studentDetailsSystem)
+2026-06-12 12:22:27
+                [main]
+                INFO 
+                c.s.s.StudentDetailsSystemApplication
+                - No active profile set, falling back to 1 default profile: "default"
+2026-06-12 12:22:27
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-12 12:22:27
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-12 12:22:28
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationExtensionSupport
+                - Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.shubhampant.studentDetailsSystem.repository.StudentRepository; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2026-06-12 12:22:28
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 14 ms. Found 2 JPA repository interfaces.
+2026-06-12 12:22:28
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-12 12:22:28
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2026-06-12 12:22:28
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationExtensionSupport
+                - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.shubhampant.studentDetailsSystem.repository.RequestAuditRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2026-06-12 12:22:28
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationExtensionSupport
+                - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.shubhampant.studentDetailsSystem.repository.UserRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2026-06-12 12:22:28
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 4 ms. Found 1 MongoDB repository interface.
+2026-06-12 12:22:28
+                [main]
+                INFO 
+                o.s.b.w.e.tomcat.TomcatWebServer
+                - Tomcat initialized with port 8080 (http)
+2026-06-12 12:22:28
+                [main]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-12 12:22:28
+                [main]
+                INFO 
+                o.a.catalina.core.StandardService
+                - Starting service [Tomcat]
+2026-06-12 12:22:28
+                [main]
+                INFO 
+                o.a.catalina.core.StandardEngine
+                - Starting Servlet engine: [Apache Tomcat/10.1.54]
+2026-06-12 12:22:28
+                [main]
+                INFO 
+                o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring embedded WebApplicationContext
+2026-06-12 12:22:28
+                [main]
+                INFO 
+                o.s.b.w.s.c.ServletWebServerApplicationContext
+                - Root WebApplicationContext: initialization completed in 445 ms
+2026-06-12 12:22:28
+                [main]
+                INFO 
+                o.h.jpa.internal.util.LogHelper
+                - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-12 12:22:28
+                [main]
+                INFO 
+                org.hibernate.Version
+                - HHH000412: Hibernate ORM core version 6.6.49.Final
+2026-06-12 12:22:28
+                [main]
+                INFO 
+                o.h.c.i.RegionFactoryInitiator
+                - HHH000026: Second-level cache disabled
+2026-06-12 12:22:28
+                [main]
+                INFO 
+                o.s.o.j.p.SpringPersistenceUnitInfo
+                - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-12 12:22:28
+                [main]
+                INFO 
+                com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Starting...
+2026-06-12 12:22:28
+                [main]
+                INFO 
+                com.zaxxer.hikari.pool.HikariPool
+                - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@76d1f6ea
+2026-06-12 12:22:28
+                [main]
+                INFO 
+                com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Start completed.
+2026-06-12 12:22:28
+                [main]
+                INFO 
+                o.hibernate.orm.connections.pooling
+                - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 9.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-12 12:22:28
+                [main]
+                INFO 
+                o.h.e.t.j.p.i.JtaPlatformInitiator
+                - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-12 12:22:28
+                [main]
+                INFO 
+                o.s.o.j.LocalContainerEntityManagerFactoryBean
+                - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-12 12:22:29
+                [main]
+                INFO 
+                org.mongodb.driver.client
+                - MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.5.2"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "aarch64", "version": "15.6.1"}, "platform": "Java/Oracle Corporation/25.0.2+10-69"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@58fbecde, com.mongodb.Jep395RecordCodecProvider@299615a5, com.mongodb.KotlinCodecProvider@3ba6707e]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null}
+2026-06-12 12:22:29
+                [cluster-ClusterId{value='6a2bacad99413caac3c90b9d', description='null'}-localhost:27017]
+                INFO 
+                org.mongodb.driver.cluster
+                - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=27, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=6174833, minRoundTripTimeNanos=0}
+2026-06-12 12:22:29
+                [main]
+                WARN 
+                o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration
+                - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-12 12:22:29
+                [main]
+                INFO 
+                o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer
+                - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-06-12 12:22:29
+                [main]
+                WARN 
+                o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer
+                - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-06-12 12:22:29
+                [main]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-12 12:22:29
+                [main]
+                INFO 
+                o.s.b.w.e.tomcat.TomcatWebServer
+                - Tomcat started on port 8080 (http) with context path '/'
+2026-06-12 12:22:29
+                [main]
+                INFO 
+                o.s.a.r.c.CachingConnectionFactory
+                - Attempting to connect to: [localhost:5672]
+2026-06-12 12:22:29
+                [main]
+                INFO 
+                o.s.a.r.c.CachingConnectionFactory
+                - Created new connection: rabbitConnectionFactory#259647f2:0/SimpleConnection@62dfe32e [delegate=amqp://guest@127.0.0.1:5672/, localPort=49286]
+2026-06-12 12:22:29
+                [main]
+                INFO 
+                c.s.s.StudentDetailsSystemApplication
+                - Started StudentDetailsSystemApplication in 1.848 seconds (process running for 2.113)
+2026-06-12 12:22:50
+                [http-nio-8080-exec-2]
+                INFO 
+                o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-12 12:22:50
+                [http-nio-8080-exec-2]
+                INFO 
+                o.s.web.servlet.DispatcherServlet
+                - Initializing Servlet 'dispatcherServlet'
+2026-06-12 12:22:50
+                [http-nio-8080-exec-2]
+                INFO 
+                o.s.web.servlet.DispatcherServlet
+                - Completed initialization in 0 ms
+2026-06-12 12:22:50
+                [http-nio-8080-exec-2]
+                INFO 
+                c.s.s.s.CustomUserDetailsService
+                - Loading user details for username=admin
+2026-06-12 12:22:50
+                [http-nio-8080-exec-2]
+                WARN 
+                c.s.s.service.StudentService
+                - Deleting student with id: 6a2b9e4ffd253abdaaacec01
+2026-06-12 12:22:50
+                [http-nio-8080-exec-2]
+                ERROR
+                c.s.s.e.GlobalExceptionHandler
+                - Unexpected exception occurred
+java.lang.IllegalArgumentException: SimpleMessageConverter only supports String, byte[] and Serializable payloads, received: com.shubhampant.studentDetailsSystem.dto.EmailDetails
+	at org.springframework.amqp.support.converter.SimpleMessageConverter.createMessage(SimpleMessageConverter.java:143)
+	at org.springframework.amqp.support.converter.AbstractMessageConverter.createMessage(AbstractMessageConverter.java:88)
+	at org.springframework.amqp.support.converter.AbstractMessageConverter.toMessage(AbstractMessageConverter.java:70)
+	at org.springframework.amqp.support.converter.AbstractMessageConverter.toMessage(AbstractMessageConverter.java:58)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.convertMessageIfNecessary(RabbitTemplate.java:1904)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.convertAndSend(RabbitTemplate.java:1200)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.convertAndSend(RabbitTemplate.java:1193)
+	at com.shubhampant.studentDetailsSystem.rabbitMQ.RabbitMQProducer.publish(RabbitMQProducer.java:17)
+	at com.shubhampant.studentDetailsSystem.service.StudentService.deleteStudent(StudentService.java:61)
+	at com.shubhampant.studentDetailsSystem.controller.StudentController.deleteStudent(StudentController.java:61)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:936)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:596)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:370)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:379)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:125)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:379)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:379)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:379)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:379)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:213)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:379)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:379)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:379)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:379)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:379)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:379)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$4(HandlerMappingIntrospector.java:267)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1797)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-06-12 12:23:20
+                [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2]
+                INFO 
+                o.s.a.r.l.SimpleMessageListenerContainer
+                - Waiting for workers to finish.
+2026-06-12 12:23:20
+                [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2]
+                INFO 
+                o.s.a.r.l.SimpleMessageListenerContainer
+                - Waiting for workers to finish.
+2026-06-12 12:23:20
+                [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2]
+                INFO 
+                o.s.a.r.l.SimpleMessageListenerContainer
+                - Waiting for workers to finish.
+2026-06-12 12:23:21
+                [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2]
+                INFO 
+                o.s.a.r.l.SimpleMessageListenerContainer
+                - Successfully waited for workers to finish.
+2026-06-12 12:23:21
+                [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2]
+                INFO 
+                o.s.a.r.l.SimpleMessageListenerContainer
+                - Successfully waited for workers to finish.
+2026-06-12 12:23:21
+                [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2]
+                INFO 
+                o.s.a.r.l.SimpleMessageListenerContainer
+                - Successfully waited for workers to finish.
+2026-06-12 12:23:21
+                [SpringApplicationShutdownHook]
+                INFO 
+                o.s.b.w.e.tomcat.GracefulShutdown
+                - Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-12 12:23:21
+                [tomcat-shutdown]
+                INFO 
+                o.s.b.w.e.tomcat.GracefulShutdown
+                - Graceful shutdown complete
+2026-06-12 12:23:21
+                [SpringApplicationShutdownHook]
+                INFO 
+                o.s.o.j.LocalContainerEntityManagerFactoryBean
+                - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-12 12:23:21
+                [SpringApplicationShutdownHook]
+                INFO 
+                com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Shutdown initiated...
+2026-06-12 12:23:21
+                [SpringApplicationShutdownHook]
+                INFO 
+                com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Shutdown completed.
+2026-06-12 12:24:07
+                [background-preinit]
+                INFO 
+                o.h.validator.internal.util.Version
+                - HV000001: Hibernate Validator 8.0.3.Final
+2026-06-12 12:24:07
+                [main]
+                INFO 
+                c.s.s.StudentDetailsSystemApplication
+                - Starting StudentDetailsSystemApplication using Java 25.0.2 with PID 49007 (/Users/shubhampant/Desktop/Addverb2026/studentDetailsSystem/target/classes started by shubhampant in /Users/shubhampant/Desktop/Addverb2026/studentDetailsSystem)
+2026-06-12 12:24:07
+                [main]
+                INFO 
+                c.s.s.StudentDetailsSystemApplication
+                - No active profile set, falling back to 1 default profile: "default"
+2026-06-12 12:24:08
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-12 12:24:08
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-12 12:24:08
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationExtensionSupport
+                - Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.shubhampant.studentDetailsSystem.repository.StudentRepository; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2026-06-12 12:24:08
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 14 ms. Found 2 JPA repository interfaces.
+2026-06-12 12:24:08
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-12 12:24:08
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2026-06-12 12:24:08
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationExtensionSupport
+                - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.shubhampant.studentDetailsSystem.repository.RequestAuditRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2026-06-12 12:24:08
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationExtensionSupport
+                - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.shubhampant.studentDetailsSystem.repository.UserRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2026-06-12 12:24:08
+                [main]
+                INFO 
+                o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 3 ms. Found 1 MongoDB repository interface.
+2026-06-12 12:24:08
+                [main]
+                INFO 
+                o.s.b.w.e.tomcat.TomcatWebServer
+                - Tomcat initialized with port 8080 (http)
+2026-06-12 12:24:08
+                [main]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-12 12:24:08
+                [main]
+                INFO 
+                o.a.catalina.core.StandardService
+                - Starting service [Tomcat]
+2026-06-12 12:24:08
+                [main]
+                INFO 
+                o.a.catalina.core.StandardEngine
+                - Starting Servlet engine: [Apache Tomcat/10.1.54]
+2026-06-12 12:24:08
+                [main]
+                INFO 
+                o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring embedded WebApplicationContext
+2026-06-12 12:24:08
+                [main]
+                INFO 
+                o.s.b.w.s.c.ServletWebServerApplicationContext
+                - Root WebApplicationContext: initialization completed in 438 ms
+2026-06-12 12:24:08
+                [main]
+                INFO 
+                o.h.jpa.internal.util.LogHelper
+                - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-12 12:24:08
+                [main]
+                INFO 
+                org.hibernate.Version
+                - HHH000412: Hibernate ORM core version 6.6.49.Final
+2026-06-12 12:24:08
+                [main]
+                INFO 
+                o.h.c.i.RegionFactoryInitiator
+                - HHH000026: Second-level cache disabled
+2026-06-12 12:24:08
+                [main]
+                INFO 
+                o.s.o.j.p.SpringPersistenceUnitInfo
+                - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-12 12:24:08
+                [main]
+                INFO 
+                com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Starting...
+2026-06-12 12:24:08
+                [main]
+                INFO 
+                com.zaxxer.hikari.pool.HikariPool
+                - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5c13af01
+2026-06-12 12:24:08
+                [main]
+                INFO 
+                com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Start completed.
+2026-06-12 12:24:08
+                [main]
+                INFO 
+                o.hibernate.orm.connections.pooling
+                - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 9.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-12 12:24:08
+                [main]
+                INFO 
+                o.h.e.t.j.p.i.JtaPlatformInitiator
+                - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-12 12:24:08
+                [main]
+                INFO 
+                o.s.o.j.LocalContainerEntityManagerFactoryBean
+                - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-12 12:24:08
+                [main]
+                INFO 
+                org.mongodb.driver.client
+                - MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.5.2"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "aarch64", "version": "15.6.1"}, "platform": "Java/Oracle Corporation/25.0.2+10-69"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@22c14d10, com.mongodb.Jep395RecordCodecProvider@66be0e72, com.mongodb.KotlinCodecProvider@38276668]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null}
+2026-06-12 12:24:09
+                [cluster-ClusterId{value='6a2bad1081d0908e51d84836', description='null'}-localhost:27017]
+                INFO 
+                org.mongodb.driver.cluster
+                - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=27, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=5991625, minRoundTripTimeNanos=0}
+2026-06-12 12:24:09
+                [main]
+                WARN 
+                o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration
+                - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-12 12:24:09
+                [main]
+                INFO 
+                o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer
+                - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-06-12 12:24:09
+                [main]
+                WARN 
+                o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer
+                - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-06-12 12:24:09
+                [main]
+                INFO 
+                o.a.coyote.http11.Http11NioProtocol
+                - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-12 12:24:09
+                [main]
+                INFO 
+                o.s.b.w.e.tomcat.TomcatWebServer
+                - Tomcat started on port 8080 (http) with context path '/'
+2026-06-12 12:24:09
+                [main]
+                INFO 
+                o.s.a.r.c.CachingConnectionFactory
+                - Attempting to connect to: [localhost:5672]
+2026-06-12 12:24:09
+                [main]
+                INFO 
+                o.s.a.r.c.CachingConnectionFactory
+                - Created new connection: rabbitConnectionFactory#4bd7e0b6:0/SimpleConnection@6b760eb7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=49344]
+2026-06-12 12:24:09
+                [main]
+                INFO 
+                c.s.s.StudentDetailsSystemApplication
+                - Started StudentDetailsSystemApplication in 1.787 seconds (process running for 2.058)
+2026-06-12 12:24:14
+                [http-nio-8080-exec-2]
+                INFO 
+                o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-12 12:24:14
+                [http-nio-8080-exec-2]
+                INFO 
+                o.s.web.servlet.DispatcherServlet
+                - Initializing Servlet 'dispatcherServlet'
+2026-06-12 12:24:14
+                [http-nio-8080-exec-2]
+                INFO 
+                o.s.web.servlet.DispatcherServlet
+                - Completed initialization in 1 ms
+2026-06-12 12:24:14
+                [http-nio-8080-exec-2]
+                INFO 
+                c.s.s.s.CustomUserDetailsService
+                - Loading user details for username=admin
+2026-06-12 12:24:14
+                [http-nio-8080-exec-2]
+                WARN 
+                c.s.s.service.StudentService
+                - Deleting student with id: 6a2b9e4ffd253abdaaacec01
+2026-06-12 12:24:14
+                [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1]
+                WARN 
+                o.s.a.r.l.ConditionalRejectingErrorHandler
+                - Execution of Rabbit message listener failed.
+org.springframework.amqp.rabbit.support.ListenerExecutionFailedException: Failed to convert message
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:157)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1694)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1616)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1604)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1595)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListenerAndHandleException(AbstractMessageListenerContainer.java:1540)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1521)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:1091)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:1027)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1431)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1331)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: org.springframework.amqp.support.converter.MessageConversionException: Failed to convert Message content
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.doFromMessage(AbstractJackson2MessageConverter.java:362)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.fromMessage(AbstractJackson2MessageConverter.java:321)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.fromMessage(AbstractJackson2MessageConverter.java:303)
+	at org.springframework.amqp.rabbit.listener.adapter.AbstractAdaptableMessageListener.extractMessage(AbstractAdaptableMessageListener.java:349)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter$MessagingMessageConverterAdapter.extractPayload(MessagingMessageListenerAdapter.java:385)
+	at org.springframework.amqp.support.converter.MessagingMessageConverter.fromMessage(MessagingMessageConverter.java:132)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.toMessagingMessage(MessagingMessageListenerAdapter.java:258)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:147)
+	... 11 common frames omitted
+Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `java.lang.String` from Object value (token `JsonToken.START_OBJECT`)
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:72)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1814)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1588)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1493)
+	at com.fasterxml.jackson.databind.deser.std.StdDeserializer._parseString(StdDeserializer.java:1579)
+	at com.fasterxml.jackson.databind.deser.std.StringDeserializer.deserialize(StringDeserializer.java:48)
+	at com.fasterxml.jackson.databind.deser.std.StringDeserializer.deserialize(StringDeserializer.java:11)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:5052)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3954)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.convertBytesToObject(AbstractJackson2MessageConverter.java:430)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.convertContent(AbstractJackson2MessageConverter.java:386)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.doFromMessage(AbstractJackson2MessageConverter.java:359)
+	... 18 common frames omitted
+2026-06-12 12:24:14
+                [http-nio-8080-exec-2]
+                INFO 
+                c.s.s.service.StudentService
+                - Successfully deleted student with id: 6a2b9e4ffd253abdaaacec01
+2026-06-12 12:24:14
+                [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1]
+                WARN 
+                o.s.a.r.l.ConditionalRejectingErrorHandler$DefaultExceptionStrategy
+                - Fatal message conversion error; message rejected; it will be dropped or routed to a dead letter exchange, if so configured: (Body:'[B@524812c4(byte[123])' MessageProperties [headers={__TypeId__=com.shubhampant.studentDetailsSystem.dto.EmailDetails}, contentType=application/json, contentEncoding=UTF-8, contentLength=0, receivedDeliveryMode=PERSISTENT, priority=0, redelivered=false, receivedExchange=student.exchange, receivedRoutingKey=student.deleted, deliveryTag=1, consumerTag=amq.ctag-CrDOQRbe2YkqoBWK5_cyZg, consumerQueue=student.queue])
+2026-06-12 12:24:14
+                [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1]
+                ERROR
+                o.s.a.r.l.SimpleMessageListenerContainer
+                - Execution of Rabbit message listener failed, and the error handler threw an exception
+org.springframework.amqp.AmqpRejectAndDontRequeueException: Error Handler converted exception to fatal
+	at org.springframework.amqp.rabbit.listener.ConditionalRejectingErrorHandler.handleError(ConditionalRejectingErrorHandler.java:148)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeErrorHandler(AbstractMessageListenerContainer.java:1487)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.handleListenerException(AbstractMessageListenerContainer.java:1780)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListenerAndHandleException(AbstractMessageListenerContainer.java:1561)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1521)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:1091)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:1027)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1431)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1331)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: org.springframework.amqp.rabbit.support.ListenerExecutionFailedException: Failed to convert message
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:157)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1694)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1616)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1604)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1595)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListenerAndHandleException(AbstractMessageListenerContainer.java:1540)
+	... 6 common frames omitted
+Caused by: org.springframework.amqp.support.converter.MessageConversionException: Failed to convert Message content
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.doFromMessage(AbstractJackson2MessageConverter.java:362)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.fromMessage(AbstractJackson2MessageConverter.java:321)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.fromMessage(AbstractJackson2MessageConverter.java:303)
+	at org.springframework.amqp.rabbit.listener.adapter.AbstractAdaptableMessageListener.extractMessage(AbstractAdaptableMessageListener.java:349)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter$MessagingMessageConverterAdapter.extractPayload(MessagingMessageListenerAdapter.java:385)
+	at org.springframework.amqp.support.converter.MessagingMessageConverter.fromMessage(MessagingMessageConverter.java:132)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.toMessagingMessage(MessagingMessageListenerAdapter.java:258)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:147)
+	... 11 common frames omitted
+Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `java.lang.String` from Object value (token `JsonToken.START_OBJECT`)
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:72)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1814)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1588)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1493)
+	at com.fasterxml.jackson.databind.deser.std.StdDeserializer._parseString(StdDeserializer.java:1579)
+	at com.fasterxml.jackson.databind.deser.std.StringDeserializer.deserialize(StringDeserializer.java:48)
+	at com.fasterxml.jackson.databind.deser.std.StringDeserializer.deserialize(StringDeserializer.java:11)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:5052)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3954)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.convertBytesToObject(AbstractJackson2MessageConverter.java:430)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.convertContent(AbstractJackson2MessageConverter.java:386)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.doFromMessage(AbstractJackson2MessageConverter.java:359)
+	... 18 common frames omitted
+2026-06-12 12:24:14
+                [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1]
+                INFO 
+                c.s.s.rabbitMQ.StudentEmailConsumer
+                - Sending Mailtrap email to deleted student: jagjeet.agarwal@rediffmail.com
+2026-06-12 12:26:03
+                [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2]
+                INFO 
+                o.s.a.r.l.SimpleMessageListenerContainer
+                - Waiting for workers to finish.
+2026-06-12 12:26:03
+                [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2]
+                INFO 
+                o.s.a.r.l.SimpleMessageListenerContainer
+                - Waiting for workers to finish.
+2026-06-12 12:26:03
+                [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2]
+                INFO 
+                o.s.a.r.l.SimpleMessageListenerContainer
+                - Waiting for workers to finish.
+2026-06-12 12:26:03
+                [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2]
+                INFO 
+                o.s.a.r.l.SimpleMessageListenerContainer
+                - Successfully waited for workers to finish.
+2026-06-12 12:26:03
+                [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2]
+                INFO 
+                o.s.a.r.l.SimpleMessageListenerContainer
+                - Successfully waited for workers to finish.
+2026-06-12 12:26:04
+                [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2]
+                INFO 
+                o.s.a.r.l.SimpleMessageListenerContainer
+                - Successfully waited for workers to finish.
+2026-06-12 12:26:04
+                [SpringApplicationShutdownHook]
+                INFO 
+                o.s.b.w.e.tomcat.GracefulShutdown
+                - Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-12 12:26:04
+                [tomcat-shutdown]
+                INFO 
+                o.s.b.w.e.tomcat.GracefulShutdown
+                - Graceful shutdown complete
+2026-06-12 12:26:04
+                [SpringApplicationShutdownHook]
+                INFO 
+                o.s.o.j.LocalContainerEntityManagerFactoryBean
+                - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-12 12:26:04
+                [SpringApplicationShutdownHook]
+                INFO 
+                com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Shutdown initiated...
+2026-06-12 12:26:04
+                [SpringApplicationShutdownHook]
+                INFO 
+                com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Shutdown completed.

@@ -1,6 +1,7 @@
 package com.shubhampant.studentDetailsSystem.service;
 
 import com.shubhampant.studentDetailsSystem.constants.RabbitMQConstants;
+import com.shubhampant.studentDetailsSystem.dto.EmailDetails;
 import com.shubhampant.studentDetailsSystem.dto.StudentFilterRequest;
 import com.shubhampant.studentDetailsSystem.entity.Student;
 import com.shubhampant.studentDetailsSystem.enums.Section;
@@ -56,8 +57,9 @@ public class StudentService {
                 id
         );
         Student student = repository.findById(id).orElseThrow(() -> new StudentNotFoundException("Student not found with id: " + id));
+        EmailDetails email = EmailDetails.builder().email(student.getEmail()).msgSubject("Account Deletion").msgBody("Sorry your account has been deleted!").build();
+        rabbitMQProducer.publish(RabbitMQConstants.STUDENT_EXCHANGE, RabbitMQConstants.STUDENT_DELETED, email);
         repository.deleteById(id);
-        rabbitMQProducer.publish(RabbitMQConstants.STUDENT_EXCHANGE, RabbitMQConstants.STUDENT_DELETED, "Student deleted");
         log.info("Successfully deleted student with id: {}", id);
     }
 
