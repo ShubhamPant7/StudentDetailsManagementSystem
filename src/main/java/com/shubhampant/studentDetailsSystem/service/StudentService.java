@@ -1,9 +1,11 @@
 package com.shubhampant.studentDetailsSystem.service;
 
+import com.shubhampant.studentDetailsSystem.constants.RabbitMQConstants;
 import com.shubhampant.studentDetailsSystem.dto.StudentFilterRequest;
 import com.shubhampant.studentDetailsSystem.entity.Student;
 import com.shubhampant.studentDetailsSystem.enums.Section;
 import com.shubhampant.studentDetailsSystem.exceptions.StudentNotFoundException;
+import com.shubhampant.studentDetailsSystem.rabbitMQ.RabbitMQProducer;
 import com.shubhampant.studentDetailsSystem.repository.StudentRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,9 +24,11 @@ import java.util.Optional;
 public class StudentService {
 
     private final StudentRepository repository;
+    private final RabbitMQProducer rabbitMQProducer;
 
-    public StudentService(StudentRepository repository) {
+    public StudentService(StudentRepository repository, RabbitMQProducer rabbitMQProducer) {
         this.repository = repository;
+        this.rabbitMQProducer = rabbitMQProducer;
     }
 
 
@@ -32,6 +36,7 @@ public class StudentService {
         log.info("Creating student");
         Student savedStudent =  repository.save(student);
         log.info("Successfully created student with id={}", savedStudent.getId());
+        rabbitMQProducer.publish(RabbitMQConstants.STUDENT_EXCHANGE, RabbitMQConstants.STUDENT_CREATED, "Student Created");
         return savedStudent;
     }
 
@@ -52,7 +57,7 @@ public class StudentService {
         );
         Student student = repository.findById(id).orElseThrow(() -> new StudentNotFoundException("Student not found with id: " + id));
         repository.deleteById(id);
-
+        rabbitMQProducer.publish(RabbitMQConstants.STUDENT_EXCHANGE, RabbitMQConstants.STUDENT_DELETED, "Student deleted");
         log.info("Successfully deleted student with id: {}", id);
     }
 
@@ -81,6 +86,8 @@ public class StudentService {
                 "Successfully updated student with id: {}",
                 id
         );
+
+        rabbitMQProducer.publish(RabbitMQConstants.STUDENT_EXCHANGE, RabbitMQConstants.STUDENT_UPDATED, "Student updated");
 
         return repository.save(current);
     }

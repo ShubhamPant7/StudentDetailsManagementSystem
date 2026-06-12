@@ -5,6 +5,7 @@ import com.shubhampant.studentDetailsSystem.dto.ExcelUploadResult;
 import com.shubhampant.studentDetailsSystem.entity.Student;
 import com.shubhampant.studentDetailsSystem.enums.Section;
 import com.shubhampant.studentDetailsSystem.exceptions.ExcelProcessingException;
+import com.shubhampant.studentDetailsSystem.rabbitMQ.RabbitMQProducer;
 import com.shubhampant.studentDetailsSystem.repository.StudentRepository;
 import com.shubhampant.studentDetailsSystem.service.ExcelService;
 import jakarta.validation.Validation;
@@ -38,12 +39,14 @@ public class ExcelServiceTests {
 
     private ExcelService excelService;
 
+    private RabbitMQProducer producer;
+
     @BeforeEach
     void setUp() {
 
         validator = Validation.buildDefaultValidatorFactory().getValidator();
 
-        excelService = new ExcelService(validator, studentRepository);
+        excelService = new ExcelService(validator, studentRepository, producer);
     }
 
     @Mock

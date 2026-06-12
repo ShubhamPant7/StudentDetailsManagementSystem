@@ -1,10 +1,12 @@
 package com.shubhampant.studentDetailsSystem.service;
 
+import com.shubhampant.studentDetailsSystem.constants.RabbitMQConstants;
 import com.shubhampant.studentDetailsSystem.dto.ExcelUploadResult;
 import com.shubhampant.studentDetailsSystem.dto.RowError;
 import com.shubhampant.studentDetailsSystem.entity.Student;
 import com.shubhampant.studentDetailsSystem.enums.Section;
 import com.shubhampant.studentDetailsSystem.exceptions.ExcelProcessingException;
+import com.shubhampant.studentDetailsSystem.rabbitMQ.RabbitMQProducer;
 import com.shubhampant.studentDetailsSystem.repository.StudentRepository;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validator;
@@ -29,10 +31,12 @@ public class ExcelService {
 
     private final Validator validator;
     private final StudentRepository studentRepository;
+    private final RabbitMQProducer rabbitMQProducer;
 
-    public ExcelService(Validator validator, StudentRepository studentRepository) {
+    public ExcelService(Validator validator, StudentRepository studentRepository, RabbitMQProducer rabbitMQProducer) {
         this.validator = validator;
         this.studentRepository = studentRepository;
+        this.rabbitMQProducer = rabbitMQProducer;
     }
 
     //Converting an uploaded excel file into Students to be added to the database.
@@ -123,6 +127,8 @@ public class ExcelService {
         }
 
         log.info("Excel upload completed. Valid students={}, Errors={}", students.size(), errors.size());
+
+        rabbitMQProducer.publish(RabbitMQConstants.STUDENT_EXCHANGE, RabbitMQConstants.STUDENT_EXCEL_UPLOADED, new ExcelUploadResult(students, errors));
 
         return new ExcelUploadResult(students, errors);
     }
